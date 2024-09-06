@@ -1,6 +1,7 @@
 import { FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { happyMomemtSelector } from './selector';
+import { Moment } from './store';
 
 type HappyTrackerProps = {};
 
@@ -9,8 +10,8 @@ const HappyTracker: FC<HappyTrackerProps> = (props) => {
 
     return (
         <div>
-            {happyMoments.map((m: any, index: number) => (
-                <div key={index}>
+            {happyMoments.map((m: Moment) => (
+                <div>
                     Happiness Intensity: {m.intensity}, when: {m.when.toISOString()}
                 </div>
             ))}
